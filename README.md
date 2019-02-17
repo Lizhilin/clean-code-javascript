@@ -12,7 +12,7 @@
   8. [并发](#并发)
   9. [错误处理](#错误处理)
   10. [格式化](#格式化)
-  11. [评论](#评论)
+  11. [注释](#注释)
   12. [Translation](#translation)
 
 ## 简介
@@ -941,7 +941,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ### ES2015/ES6 类优先与 ES5 纯函数
 
 很难为经典的 ES5 类创建可读的的继承、 构造和方法定义。 如果你需要继承（并且感到奇怪为啥你不需
-要）， 则优先用 ES2015/ES6的类。 不过， 短小的函数优先于类， 知道你发现你需要更大并且更复杂的
+要）， 则优先用 ES2015/ES6的类。 不过， 短小的函数优先于类， 直到你发现你需要更大并且更复杂的
 对象。
 
 **不好的：**
@@ -983,7 +983,7 @@ Human.prototype.constructor = Human;
 Human.prototype.speak = function speak() {};
 ```
 
-**好的**
+**好的：**
 ```javascript
 class Animal {
   constructor(age) {
@@ -1016,7 +1016,7 @@ class Human extends Mammal {
 ### 使用方法链
 
 这个模式在 JavaScript 中是非常有用的， 并且你可以在许多类库比如 jQuery 和 Lodash 中见到。
-它允许你的代码变得富有表现力， 并减少啰嗦。 因为这个原因， 我说， 使用方法链然后再看看你的代码
+它使你的代码变得富有表现力， 并减少啰嗦。 因为这个原因， 我说， 使用方法链然后再看看你的代码
 会变得多么简洁。 在你的类／方法中， 简单的在每个方法的最后返回 `this` ， 然后你就能把这个类的
 其它方法链在一起。
 
@@ -1101,10 +1101,6 @@ const car = new Car()
 你应该优先使用组合而不是继承。 有许多好的理由去使用继承， 也有许多好的理由去使用组合。这个格言
 的重点是， 如果你本能的观点是继承， 那么请想一下组合能否更好的为你的问题建模。 很多情况下它真的
 可以。
-
-You might be wondering then, "when should I use inheritance?" It
-depends on your problem at hand, but this is a decent list of when inheritance
-makes more sense than composition:
 
 那么你也许会这样想， “我什么时候改使用继承？” 这取决于你手上的问题， 不过这儿有一个像样的列表说
 明什么时候继承比组合更好用：
@@ -1915,11 +1911,11 @@ review.perfReview();
 
 **[⬆ 返回顶部](#代码整洁的-javascript)**
 
-## **评论**
+## **注释**
 
-### 仅仅对包含复杂业务逻辑的东西进行评论
+### 仅仅对包含复杂业务逻辑的东西进行注释
 
-评论是代码的辩解， 不是要求。 多数情况下， 好的代码就是文档。
+注释是代码的辩解， 不是要求。 多数情况下， 好的代码就是文档。
 
 **不好的：**
 ```javascript
@@ -1979,9 +1975,9 @@ doStuff();
 ```
 **[⬆ 返回顶部](#代码整洁的-javascript)**
 
-### 不要有日志式的评论
+### 不要有日志式的注释
 
-记住， 使用版本控制！ 不需要僵尸代码， 注释调的代码， 尤其是日志式的评论。 使用 `git log` 来
+记住， 使用版本控制！ 不需要僵尸代码， 注释掉的代码， 尤其是日志式的注释。 使用 `git log` 来
 获取历史记录。
 
 **不好的：**
